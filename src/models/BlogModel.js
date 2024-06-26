@@ -21,12 +21,12 @@ const blogSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    author: {
-        type: String, // come back later and replace with Mongoose object ID
+    author: {  //  this takes the ObjectId from the model "User"
+        type: {type: mongoose.Schema.Types.ObjectId, ref: "User"},
         required: true
     },
-    likes: {
-        type: [String], // come back later and replace with Mongoose object ID
+    likes: {  // likes is now refering to an array of users
+        type: [{type: mongoose.Schema.Types.ObjectId, ref: "User"}], 
         required: false
     },
     headerImage: {
