@@ -1,9 +1,10 @@
+const { BlogModel } = require("../models/BlogModel");
 const { UserModel } = require("../models/UserModel");
 const { databaseConnect, databaseClear, databaseClose } = require("./database");
 
 
 // insert many...
-async function seedUsers (usersToUse) {
+async function seedUsers () {
     let userData = [
         {
             username: "alex"
@@ -18,9 +19,41 @@ async function seedUsers (usersToUse) {
     return result
 };
 
-async function seedBlogPosts () {
 
+async function seedBlogPosts (usersToUse) {
+    let blogData = [
+        {
+            title: "blog post 1",
+            content: "this is blog post 1 content",
+            author: usersToUse[0].id,
+            headerImage: "https://placehold.co/300x200",
+            tags: ["seeded", "blog"],
+            categories: ["coding", "travel"]
+        },
+        {
+            title: "blog post 2",
+            content: "this is blog post 2 content",
+            author: usersToUse[1].id,
+            headerImage: "https://placehold.co/300x200",
+            tags: ["seeded", "blog"],
+            categories: ["life", "photography"]
+        },
+        {
+            title: "blog post 3",
+            content: "this is blog post 3 content",
+            author: usersToUse[1].id,
+            headerImage: "https://placehold.co/300x200",
+            tags: ["seeded", "blog"],
+            categories: ["life", "photography"]
+        },
+    ];
+
+    let result = await BlogModel.insertMany(blogData);
+    console.log(result);
+    return result;
 };
+
+
 async function seed(){
     
     await databaseConnect();
