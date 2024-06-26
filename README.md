@@ -34,6 +34,7 @@ Join table in SQL, but subdocument in Mongoos that lives in Blog Posts
 
 - user id
 - comment
+- like
 
 ### Action Log
 
