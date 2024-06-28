@@ -42,3 +42,8 @@ Join table in SQL, but subdocument in Mongoos that lives in Blog Posts
 - route visited
 - timestampt
 - result
+
+### Packages
+
+- bcryptjs: [bcryptjs](https://www.npmjs.com/package/bcryptjs) 
+- jsonwebtoken: [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken)
