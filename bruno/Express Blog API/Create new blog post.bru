@@ -1,0 +1,22 @@
+meta {
+  name: Create new blog post
+  type: http
+  seq: 3
+}
+
+post {
+  url: http://localhost:3000/blogs
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+  
+      "content": "this is blog post 78 content",
+      "author": "667c6870bb6614cfce816e05",
+      "headerImage": "https://placehold.co/300x200",
+      "tags": ["seeded", "blog"],
+      "categories": ["coding", "travel"]
+  }
+}
